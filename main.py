@@ -36,13 +36,25 @@ class LinkedList:
             else:
                 lol += 1
                 current = current.next
-
-       #create vairable, initialize to 0
-        #walk through the linked list
-        #add one to variable each time
+    def size(self):
+        l = 0
+        current = self.head
+        while current:
+            l += 1
+            current = current.next
+        return l
+    
+    def index(self, x):
+        counter = 1
+        current = self.head
+        while current:
+            if counter == x:
+                print("item", x, "in the list is:", current.name,", Hobby:", current.hobby, ", ID:", current.ID)
+                return 0
+            current = current.next
+            counter+=1
         
-        
-
+    
 StudentLine = LinkedList()
 
 StudentLine.insert("timothy", 32147,  "breathing")
@@ -53,8 +65,12 @@ StudentLine.insert("Lala",7, "Stupid memes")
 StudentLine.insert("Alexa",50265, "Coding")
 
 #LinkedList.printList(StudentLine)
-
 #LinkedList.getNumber(StudentLine)
+
 StudentLine.printList()
 print(StudentLine.getNumber())
+
+print("Number of Students:", StudentLine.size())
+StudentLine.index(3)
+
 
